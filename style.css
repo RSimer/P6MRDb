@@ -1,0 +1,31 @@
+:root {
+    --color1: #14738d;
+    --color2: #6ee6da;
+}
+
+#title {
+    background-image: linear-gradient(to bottom right, var(--color1), white, var(--color2));
+    text-align: center;
+    margin: 20px;
+    padding: 50px;
+    font-size: 100px;
+    font-family: 'Permanent Marker', cursive;
+    border: solid;
+}
+
+.level {
+    padding-bottom: 20px;
+}
+
+.class {
+    margin: 20px 0 20px 0;
+}
+
+#footer {
+    background-image: linear-gradient(to bottom right, var(--color1), white, var(--color2));
+    text-align: center;
+    margin: 20px;
+    padding: 50px;
+    border: solid;
+    font-family: 'Permanent Marker', cursive;
+}
