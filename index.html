@@ -1,76 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
 </head>
+
 <body>
 
-    <header>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-              <a class="navbar-item" href="https://bulma.io">
-                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-              </a>
-          
-              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a>
-            </div>
-          
-            <div id="navbarBasicExample" class="navbar-menu">
-              <div class="navbar-start">
-                <a class="navbar-item">
-                  Home
-                </a>
-          
-                <a class="navbar-item">
-                  Documentation
-                </a>
-          
-                <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link">
-                    More
-                  </a>
-          
-                  <div class="navbar-dropdown">
-                    <a class="navbar-item">
-                      About
-                    </a>
-                    <a class="navbar-item">
-                      Jobs
-                    </a>
-                    <a class="navbar-item">
-                      Contact
-                    </a>
-                    <hr class="navbar-divider">
-                    <a class="navbar-item">
-                      Report an issue
-                    </a>
-                  </div>
-                </div>
-              </div>
-          
-              <div class="navbar-end">
-                <div class="navbar-item">
-                  <div class="buttons">
-                    <a class="button is-primary">
-                      <strong>Log in</strong>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </nav>
-    </header>
+  <header>
 
+    <div id="title" class="title">
+      <h1>Mood-Sic</h1>
+    </div>
 
-    <!-- Creating a nav bar with icon and the name of web aplication on the left of the page.
+    <nav class="level">
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Home</a>
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Menu</a>
+      </p>
+      <p class="level-item has-text-centered">
+        <img src="/assets/pod6Logo.jpg" alt="" style="height: 100px;">
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Reservations</a>
+      </p>
+      <p class="level-item has-text-centered">
+        <a class="link is-info">Contact</a>
+      </p>
+    </nav>
+  </header>
+
+  <div class="info container">
+    <div class="notification is-primary">
+      Welcome to Mood-Sic, AKA Mood Music Finder. This site will help you compose a playlist according to your mood!
+      <br>
+      To start, how do you feel? Choose from one of the moods below
+    </div>
+  </div>
+
+  <div class="columns is-mobile is-multiline is-centered">
+    <div class="column is-narrow">
+      <p class="bd-notification is-primary">
+        <code class="html">is-narrow</code><br>
+        First Column
+      </p>
+    </div>
+    <div class="column is-narrow">
+      <p class="bd-notification is-primary">
+        <code class="html">is-narrow</code><br>
+        Our Second Column
+      </p>
+    </div>
+    <div class="column is-narrow">
+      <p class="bd-notification is-primary">
+        <code class="html">is-narrow</code><br>
+        Third Column
+      </p>
+    </div>
+    <div class="column is-narrow">
+      <p class="bd-notification is-primary">
+        <code class="html">is-narrow</code><br>
+        The Fourth Column
+      </p>
+    </div>
+    <div class="column is-narrow">
+      <p class="bd-notification is-primary">
+        <code class="html">is-narrow</code><br>
+        Fifth Column
+      </p>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <h3>Contacts....</h3>
+  </footer>
+
+  <!-- Creating a nav bar with icon and the name of web aplication on the left of the page.
 
         1. Creating a container  
          2. Creating a header to display text for user selections
@@ -87,8 +101,9 @@
     
     
     -->
-    
 
-    
+
+
 </body>
+
 </html>
