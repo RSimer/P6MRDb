@@ -4,6 +4,7 @@
 }
 
 #title {
+    display: flex;
     background-image: linear-gradient(to bottom right, var(--color1), white, var(--color2));
     text-align: center;
     margin: 20px;
