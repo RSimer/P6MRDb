@@ -4,10 +4,10 @@ var buttonEl = $('.button');
 
 function clickVal() {
     search = inputEl.val();
-	encodeURIComponent(search);
+	console.log(encodeURIComponent(search));
+	search.toString();
 	searchVal(search);
-	var nextPage = 'database.html' + search;
-		location.assign(nextPage);
+		window.location.href = 'database.html';
 }
 
 function searchVal(search) {
@@ -26,12 +26,18 @@ function searchVal(search) {
 	
 	$.ajax(settings).done(function (response) {
 		console.log(response);
-		console.log(search);
 	});
  }
 
 
+ 
+
 
 buttonEl.on('click',searchVal);
+// inputEl.on('keypress', function (e) {
+//     if (e.key === 'Enter') {
+//       searchVal();
+//     }
+// });
 
 // put in input, add event listener click, get input value, build input value into query string, 
