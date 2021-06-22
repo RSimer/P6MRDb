@@ -12,6 +12,23 @@
     font-size: 100px;
     font-family: 'Permanent Marker', cursive;
     border: solid;
+    /* position: relative; */
+}
+
+.input {
+    width: 50%;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.button {
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.searchBar {
+    text-align: center;
 }
 
 .hero {
@@ -31,6 +48,21 @@
 
 .class {
     margin: 20px 0 20px 0;
+}
+
+#review {
+    margin-left: 35%;
+    margin-right: 35%;
+    background-color: var(--color1);
+}
+
+#review p {
+    text-align: center;
+    color: white;
+}
+
+p {
+    color: white;
 }
 
 #footer {
