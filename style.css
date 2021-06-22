@@ -10,7 +10,7 @@
     margin: 20px;
     padding: 50px;
     font-size: 100px;
-    font-family: 'Permanent Marker', cursive;
+    /* font-family: 'Permanent Marker', cursive; */
     border: solid;
     /* position: relative; */
 }
@@ -71,5 +71,5 @@ p {
     margin: 20px;
     padding: 50px;
     border: solid;
-    font-family: 'Permanent Marker', cursive;
+    /* font-family: 'Permanent Marker', cursive; */
 }
