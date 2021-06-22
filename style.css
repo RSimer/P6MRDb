@@ -105,3 +105,23 @@ h2 {
     font-family: 'Staatliches', cursive;
     font-size: 40px;
 }
+
+/* unvisited link */
+.titleLink:link {
+    color: black;
+  }
+  
+  /* visited link */
+  .titleLink:visited {
+    color: black;
+  }
+  
+  /* mouse over link */
+  .titleLink:hover {
+    color: var(--color2);
+  }
+  
+  /* selected link */
+  /* .titleLink:active {
+    color: var(--color2);
+  } */
