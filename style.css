@@ -1,0 +1,64 @@
+:root {
+    --color1: #14738d;
+    --color2: #6ee6da;
+}
+
+#title {
+    display: flex;
+    background-image: linear-gradient(to bottom right, var(--color1), white, var(--color2));
+    text-align: center;
+    margin: 20px;
+    padding: 50px;
+    font-size: 100px;
+    font-family: 'Permanent Marker', cursive;
+    border: solid;
+    /* position: relative; */
+}
+
+.input {
+    width: 50%;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.button {
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.searchBar {
+    text-align: center;
+}
+
+.level {
+    padding-bottom: 20px;
+}
+
+.class {
+    margin: 20px 0 20px 0;
+}
+
+#review {
+    margin-left: 35%;
+    margin-right: 35%;
+    background-color: var(--color1);
+}
+
+#review p {
+    text-align: center;
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+#footer {
+    background-image: linear-gradient(to bottom right, var(--color1), white, var(--color2));
+    text-align: center;
+    margin: 20px;
+    padding: 50px;
+    border: solid;
+    font-family: 'Permanent Marker', cursive;
+}
