@@ -3,15 +3,15 @@ var inputEl = $('#type');
 var buttonEl = $('.button');
 
 
-function clickVal() {
-    search = inputEl.val();
-	console.log(encodeURIComponent(search));
-	search.toString();
-	searchVal(search);
-		window.location.href = 'database.html';
+function getUserResult() {
+    var search = inputEl.val();
+    console.log(search);
+	fetchMovies(search);
+    movieReview(search);
+		// window.location.href = 'database.html';
 }
 
-function searchVal(search) {
+function fetchMovies(search) {
     
 
 	var settings = {
@@ -24,21 +24,35 @@ function searchVal(search) {
 			"x-rapidapi-host": "imdb8.p.rapidapi.com"
 		}
 	};
-	
+	console.log(settings);
 	$.ajax(settings).done(function (response) {
 		console.log(response);
+        
 	});
  }
-
-
+ function movieReview(search) {
+     
+ 
+ var settings = {
+    "url": `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${search}&api-key=LcupeZ53qX2r7P1WQ59dwA0CsjJPbbtp`,
+    "method": "GET",
+    "timeout": 0,
+    "headers": {
+      "Accept": "application/json"
+    },
+  };
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+ }
  
 
 
-buttonEl.on('click',searchVal);
-// inputEl.on('keypress', function (e) {
-//     if (e.key === 'Enter') {
-//       searchVal();
-//     }
-// });
+buttonEl.on('click',getUserResult);
+inputEl.on('keypress', function (e) {
+    if (e.key === 'Enter') {
+      getUserResult();
+    }
+});
 
 // put in input, add event listener click, get input value, build input value into query string, 
