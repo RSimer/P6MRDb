@@ -6,7 +6,7 @@ function getUserResult() {
     var search = inputEl.val();
     console.log(search);
 	fetchMovies(search);
-    movieReview(search);
+    // movieReview(search);
 		// window.location.href = 'database.html';
 }
 
@@ -36,13 +36,14 @@ function fetchMovies(search) {
 
       if (movies[i].titleType === 'movie') {
       
-        creatingSuggestions.append(`<div class="columns is-centered is-primary"><button data-movie-name = "${movies[i].title}">${movies[i].title}</button></div>`)
+        creatingSuggestions.append(`<div class="column is-centered is-primary"><button id="movieItem" data-movie-name = "${movies[i].title}">${movies[i].title}</button></div>`)
         
       }
   
   }
-
-  console.log(movies)
+        // var movieSelection = JSON.parse(localStorage.getItem(“data-movie-name”));
+        // localStorage.getItem(data-movie-name)
+//   console.log(movies)
 
 }
 
@@ -54,11 +55,13 @@ function fetchMovies(search) {
 
 
 
- function movieReview(search) {
+ function movieReview() {
      
+    var movieTitle = localStorage.getItem('data-movie-name');
+    console.log(movieTitle,'functionCall');
  
  var settings = {
-    "url": `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${search}&api-key=LcupeZ53qX2r7P1WQ59dwA0CsjJPbbtp`,
+    "url": `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${movieTitle}&api-key=LcupeZ53qX2r7P1WQ59dwA0CsjJPbbtp`,
     "method": "GET",
     "timeout": 0,
     "headers": {
@@ -68,21 +71,21 @@ function fetchMovies(search) {
   $.ajax(settings).done(function (response) {
     console.log(response);
 
-    movieReviews (response.results) 
+    movieReviewResult (response.results) 
 
   });
  }
 
- function movieReviews (review) {
+ function movieReviewResult (review) {
   creatingSuggestions.empty(); 
   for (var i=0; i < review.length; i++) {
       console.log(review);
       console.log(review[i]);
     if (review[i].display_title) {
       
-      creatingSuggestions.append(`<div><button data-movie-name = "${movies[i].title}">${review[i].display_title}</button></div>`)
+    creatingSuggestions.append(`<div><button data-movie-name = "${review[i].title}">${review[i].display_title}</button></div>`)
       
-      console.log(movieReviews)
+    //   console.log(movieReviewResult)
 
       }
   
@@ -95,7 +98,10 @@ function fetchMovies(search) {
 
 creatingSuggestions.on('click', '[data-movie-name]', function(event){
   console.log(event.target.dataset.movieName)
+  var movieItem = $("#movieItem").on('click', localStorage.setItem('data-movie-name',event.target.dataset.movieName));
+  movieReview();
 })
+
 
 
 buttonEl.on('click',getUserResult);
