@@ -1,7 +1,6 @@
-
 var inputEl = $('#type');
 var buttonEl = $('.button');
-
+var creatingSuggestions = $('#suggestions')
 
 function getUserResult() {
     var search = inputEl.val();
@@ -25,11 +24,36 @@ function fetchMovies(search) {
 		}
 	};
 	console.log(settings);
-	$.ajax(settings).done(function (response) {
-		console.log(response);
-        
+	  $.ajax(settings).done(function (response) {
+		  console.log(response);
+        movieSearchList (response.results) 
 	});
  }
+
+  function movieSearchList (movies) {
+    creatingSuggestions.empty(); 
+      for (var i=0; i < movies.length; i++) {
+
+      if (movies[i].titleType === 'movie') {
+      
+        creatingSuggestions.append(`<div class="columns is-centered is-primary"><button data-movie-name = "${movies[i].title}">${movies[i].title}</button></div>`)
+        
+      }
+  
+  }
+
+  console.log(movies)
+
+}
+
+// if title === movie then display movie choices by appending box with an <a></a> tag
+// then when box clicked will send message to new york time with a title === title.type and search the api 
+
+
+
+
+
+
  function movieReview(search) {
      
  
@@ -43,9 +67,35 @@ function fetchMovies(search) {
   };
   $.ajax(settings).done(function (response) {
     console.log(response);
+
+    movieReviews (response.results) 
+
   });
  }
- 
+
+ function movieReviews (review) {
+  creatingSuggestions.empty(); 
+  for (var i=0; i < review.length; i++) {
+      console.log(review);
+      console.log(review[i]);
+    if (review[i].display_title) {
+      
+      creatingSuggestions.append(`<div><button data-movie-name = "${movies[i].title}">${review[i].display_title}</button></div>`)
+      
+      console.log(movieReviews)
+
+      }
+  
+
+  }
+
+}
+
+// with review page show the 'mpaa rating', title name, reviewer name, summary short, and link to the article 
+
+creatingSuggestions.on('click', '[data-movie-name]', function(event){
+  console.log(event.target.dataset.movieName)
+})
 
 
 buttonEl.on('click',getUserResult);
