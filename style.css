@@ -10,7 +10,7 @@
     margin: 20px;
     padding: 50px;
     font-size: 100px;
-    /* font-family: 'Permanent Marker', cursive; */
+    font-family: 'Mate SC', serif;
     border: solid;
     /* position: relative; */
 }
@@ -20,6 +20,21 @@
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 50px;
+}
+
+.hero {
+    margin: 50px;
+    padding: 5px;
+}
+
+.heroText {
+    font-family: 'Amatic SC', cursive;
+    font-size: 5rem;
+    border: solid;
+}
+
+.card {
+    margin: 70px;
 }
 
 .button {
@@ -54,11 +69,16 @@ p {
     color: white;
 }
 
+.reviewBtn {
+    display: flex;
+    justify-content: center;
+}
+
 #footer {
     background-image: linear-gradient(to bottom right, var(--color1), white, var(--color2));
     text-align: center;
     margin: 20px;
     padding: 50px;
     border: solid;
-    /* font-family: 'Permanent Marker', cursive; */
+    font-family: 'Mate SC', serif;
 }
