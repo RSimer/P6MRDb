@@ -46,6 +46,17 @@
     text-align: center;
 }
 
+.hero {
+    margin: 50px;
+    padding: 20px;
+    border: solid;
+}
+
+.card {
+    margin: 70px;
+
+
+}
 .level {
     padding-bottom: 20px;
 }
