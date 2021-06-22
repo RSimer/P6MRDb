@@ -93,3 +93,15 @@ p {
     border: solid;
     font-family: 'Mate SC', serif;
 }
+
+.content {
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    font-size: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    font-size: 40px;
+}
