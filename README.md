@@ -25,4 +25,4 @@ The goal of the task was to develop an interactive movie database web app. The e
 
 <h1>Screen Shot</h1>
 
-<img src="screenshot.png"/>
+![Screenshot](assets/screenshot.png)
