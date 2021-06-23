@@ -80,7 +80,7 @@ function fetchMovies(search) {
       console.log(review[i]);
     if (review[i].display_title) {
       
-      creatingSuggestions.append(`<div><button data-movie-name = "${movies[i].title}">${review[i].display_title}</button></div>`)
+      creatingSuggestions.append(`<div class = "card"> data-movie-name = "${movies[i].title}">${review[i].display_title}</div>`)
       
       console.log(movieReviews)
 
