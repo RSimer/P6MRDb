@@ -35,7 +35,6 @@ function fetchMovies(search) {
       if (movies[i].titleType === 'movie') {
       
         creatingSuggestions.append(`<div class="column is-centered is-primary">
-        <h1>Click the movie you want to see the review of!</h1>
         <button class = "button is-size-4 is-rounded has-background-link has-text-white-bis" id="movieItem" data-movie-name = "${movies[i].title}">${movies[i].title}</button>
         </div>`)
         
