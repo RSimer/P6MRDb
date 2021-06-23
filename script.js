@@ -6,8 +6,6 @@ function getUserResult() {
     var search = inputEl.val();
     console.log(search);
 	fetchMovies(search);
-    movieReview(search);
-		// window.location.href = 'database.html';
 }
 
 function fetchMovies(search) {
@@ -36,13 +34,14 @@ function fetchMovies(search) {
 
       if (movies[i].titleType === 'movie') {
       
-        creatingSuggestions.append(`<div class="columns is-centered is-primary"><button data-movie-name = "${movies[i].title}">${movies[i].title}</button></div>`)
+        creatingSuggestions.append(`<div class="column is-centered is-primary">
+        <button id="movieItem" data-movie-name = "${movies[i].title}">${movies[i].title}</button>
+        </div>`)
         
       }
   
   }
 
-  console.log(movies)
 
 }
 
@@ -54,11 +53,13 @@ function fetchMovies(search) {
 
 
 
- function movieReview(search) {
+ function movieReview() {
      
+    var movieTitle = localStorage.getItem('data-movie-name');
+    console.log(movieTitle,'functionCall');
  
  var settings = {
-    "url": `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${search}&api-key=LcupeZ53qX2r7P1WQ59dwA0CsjJPbbtp`,
+    "url": `https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=${movieTitle}&api-key=LcupeZ53qX2r7P1WQ59dwA0CsjJPbbtp`,
     "method": "GET",
     "timeout": 0,
     "headers": {
@@ -68,22 +69,27 @@ function fetchMovies(search) {
   $.ajax(settings).done(function (response) {
     console.log(response);
 
-    movieReviews (response.results) 
+    movieReviewResult (response.results) 
 
   });
  }
 
- function movieReviews (review) {
+ function movieReviewResult (review) {
   creatingSuggestions.empty(); 
   for (var i=0; i < review.length; i++) {
-      console.log(review);
-      console.log(review[i]);
+      // console.log(review);
+      // console.log(review[i]);
     if (review[i].display_title) {
       
-      creatingSuggestions.append(`<div class = "card"> data-movie-name = "${movies[i].title}">${review[i].display_title}</div>`)
-      
-      console.log(movieReviews)
+    creatingSuggestions.append(`<div class = "card">
+    <h2>${review[i].headline}</h2>
+    <h4 class = "is-size-6">Reviewed by: ${review[i].byline}</h4>
+    <h3 class = "pt-2 is-size-5">${review[i].summary_short}</h3>
+    <a href="${review[i].link.url}">${review[i].link.suggested_link_text}</a>
 
+
+    </div>`)
+    // <h1 class = "is-size-5">${review[i].display_title}</h1>
       }
   
 
@@ -95,7 +101,10 @@ function fetchMovies(search) {
 
 creatingSuggestions.on('click', '[data-movie-name]', function(event){
   console.log(event.target.dataset.movieName)
+  var movieItem = $("#movieItem").on('click', localStorage.setItem('data-movie-name',event.target.dataset.movieName));
+  movieReview();
 })
+
 
 
 buttonEl.on('click',getUserResult);
