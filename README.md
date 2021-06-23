@@ -8,6 +8,14 @@ https://rsimer.github.io/Project-1/
 
 The goal of this project was to build a webapp which allowed users to search for movie titles and then find reviews of those movies. 
 
+<h1>Technologies Used</h1>
+
+    - HTML 
+    - CSS 
+    - Bulma 
+    - Javascript 
+    - jQuery 
+
 <h1>Work Undertaken</h1>
 
 The goal of the task was to develop an interactive movie database web app. The expected functionality is described below: 
