@@ -35,7 +35,7 @@ function fetchMovies(search) {
       if (movies[i].titleType === 'movie') {
       
         creatingSuggestions.append(`<div class="column is-centered is-primary">
-        <button id="movieItem" data-movie-name = "${movies[i].title}">${movies[i].title}</button>
+        <button class = "button is-size-4 is-rounded has-background-link has-text-white-bis" id="movieItem" data-movie-name = "${movies[i].title}">${movies[i].title}</button>
         </div>`)
         
       }
@@ -89,7 +89,6 @@ function fetchMovies(search) {
 
 
     </div>`)
-    // <h1 class = "is-size-5">${review[i].display_title}</h1>
       }
   
 
