@@ -12,7 +12,7 @@
     font-size: 100px;
     font-family: 'Mate SC', serif;
     border: solid;
-    /* position: relative; */
+ 
 }
 
 .input {
@@ -130,7 +130,3 @@ h4{
     color: var(--color2);
   }
   
-  /* selected link */
-  /* .titleLink:active {
-    color: var(--color2);
-  } */
