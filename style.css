@@ -144,4 +144,14 @@ h4 {
     .content {
         font-size: 50px;
     }
+    .button {
+       
+        padding-top: 5px;
+        padding-bottom: 5px;
+        height: 40px;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        margin-bottom: 10;
+    }
 }
