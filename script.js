@@ -2,7 +2,6 @@ var inputEl = $('#type');
 var buttonEl = $('.button');
 var creatingSuggestions = $('#suggestions')
 var searchArea = $('#history')
-console.log(searchArea);
 
 
 function getUserResult() {
@@ -10,13 +9,11 @@ function getUserResult() {
     console.log(search);
 	fetchMovies(search);
 }
-// function getPrevResult() {
-//   var 
-// }
 
 function fetchMovies(search) {
-    
+  var search = inputEl.val() || localStorage.getItem('data-movie-name') ;
 
+console.log(search);
 	var settings = {
 		"async": true,
 		"crossDomain": true,
@@ -107,13 +104,12 @@ function searchHistory() {
 
   if (callBack){
     searchArea.append(`
-    Previous Search<button class = "button" id = "required" >
+    Previous Search<button class = "button" id = "required" search = ${callBack} >
     ${callBack}
     </button>
     `)
 
   }
-
 }
 
   searchHistory();
