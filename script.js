@@ -10,9 +10,9 @@ function getUserResult() {
     console.log(search);
 	fetchMovies(search);
 }
-function getPrevResult() {
-  var 
-}
+// function getPrevResult() {
+//   var 
+// }
 
 function fetchMovies(search) {
     
@@ -107,7 +107,7 @@ function searchHistory() {
 
   if (callBack){
     searchArea.append(`
-    <button class = "button" id = "required" >
+    Previous Search<button class = "button" id = "required" >
     ${callBack}
     </button>
     `)
