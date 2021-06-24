@@ -103,10 +103,12 @@ function searchHistory() {
   console.log(callBack)
 
   if (callBack){
-    searchArea.append(`
-    Previous Search<button class = "button" id = "required" search = ${callBack} >
+    searchArea.append(`<div>
+    <h6 class = "box">Previous Search</h6>
+    <button class = "button" id = "required" search = ${callBack} >
     ${callBack}
     </button>
+    </div>
     `)
 
   }
