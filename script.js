@@ -1,11 +1,17 @@
 var inputEl = $('#type');
 var buttonEl = $('.button');
 var creatingSuggestions = $('#suggestions')
+var searchArea = $('#history')
+console.log(searchArea);
+
 
 function getUserResult() {
     var search = inputEl.val();
     console.log(search);
 	fetchMovies(search);
+}
+function getPrevResult() {
+  var 
 }
 
 function fetchMovies(search) {
@@ -22,7 +28,7 @@ function fetchMovies(search) {
 		}
 	};
 	console.log(settings);
-	  $.ajax(settings).done(function (response) {
+	  $.ajax(settings).then(function (response) {
 		  console.log(response);
         movieSearchList (response.results) 
 	});
@@ -52,7 +58,7 @@ function fetchMovies(search) {
 
 
 
-
+// the nyt api call function 
  function movieReview() {
      
     var movieTitle = localStorage.getItem('data-movie-name');
@@ -77,8 +83,7 @@ function fetchMovies(search) {
  function movieReviewResult (review) {
   creatingSuggestions.empty(); 
   for (var i=0; i < review.length; i++) {
-      // console.log(review);
-      // console.log(review[i]);
+
     if (review[i].display_title) {
       
     creatingSuggestions.append(`<div class = "card">
@@ -96,8 +101,25 @@ function fetchMovies(search) {
 
 }
 
-// with review page show the 'mpaa rating', title name, reviewer name, summary short, and link to the article 
+function searchHistory() {
+  var callBack = localStorage.getItem('data-movie-name');
+  console.log(callBack)
 
+  if (callBack){
+    searchArea.append(`
+    <button class = "button" id = "required" >
+    ${callBack}
+    </button>
+    `)
+
+  }
+
+}
+
+  searchHistory();
+
+
+// click events that triggers the local save and nyt funciton
 creatingSuggestions.on('click', '[data-movie-name]', function(event){
   console.log(event.target.dataset.movieName)
   var movieItem = $("#movieItem").on('click', localStorage.setItem('data-movie-name',event.target.dataset.movieName));
@@ -105,7 +127,7 @@ creatingSuggestions.on('click', '[data-movie-name]', function(event){
 })
 
 
-
+// entering the input to start the IMDb api jquery functions
 buttonEl.on('click',getUserResult);
 inputEl.on('keypress', function (e) {
     if (e.key === 'Enter') {
@@ -113,4 +135,4 @@ inputEl.on('keypress', function (e) {
     }
 });
 
-// put in input, add event listener click, get input value, build input value into query string, 
+$('#required').on('click',getUserResult);
