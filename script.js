@@ -14,7 +14,7 @@ function getUserResult() {
 function fetchMovies(search) {
   var search = inputEl.val() || localStorage.getItem('data-movie-name') ;
 
-
+console.log(search);
 	var settings = {
 		"async": true,
 		"crossDomain": true,
