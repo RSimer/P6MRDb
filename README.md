@@ -2,7 +2,7 @@
 
 <h1>Deployed link:</h1>
 
-https://rsimer.github.io/Project-1/ 
+https://rsimer.github.io/P6MRDb/ 
 
 <h1>Description</h1>
 
